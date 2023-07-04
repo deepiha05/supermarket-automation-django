@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager</title>
+
+    <style>
+        img {
+            opacity: 0.85;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background-image: url("{%static 'manager_office.jpg'%}");
+            background-color: rgb(72, 98, 138);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .verticalhorizontal1 {
+            position: absolute;
+            right: 40px;
+            top: 36px;
+            /* border: 2px solid yellow; */
+        }
+
+        .verticalhorizontal1 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 82, 82);
+            color: white;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: rgb(255, 3, 3);
+        }
+
+        .btnl {
+            top: 30%;
+            left: 31%;
+            position: absolute;
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: auto;
+            padding: 100px 90px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            /* background-color: grey; */
+            background-image: url("{%static 'money.png'%}");
+            background-position-x: center;
+            background-position-y: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: white;
+            display: block;
+        }
+
+        .btnr {
+            top: 30%;
+            left: 57%;
+            position: absolute;
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: auto;
+            padding: 100px 90px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            background-image: url("{%static 'graph.png'%}");
+            background-position-x: center;
+            background-position-y: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: white;
+            display: block;
+        }
+
+        .userm{
+            position: absolute;
+            text-align: center;
+            top: 63%;
+            left: 30.8%;
+            font-size: 35px;
+        }
+
+        .userc{
+            position: absolute;
+            text-align: center;
+            top: 63%;
+            left: 53.8%;
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="verticalhorizontal1">
+        <button onclick="document.location='/logoutUser'" class="btn" style="height:40px; width:120px"> Sign out </button>
+    </div>
+    <div class="verticalhorizontal">
+        <img src="{%static 'black.jpg'%}" alt="Forest" width="800" height="500">
+        
+        <button onclick="document.location='/manager_inventory'" type="button" class="btnl" ></button>
+        <button onclick="document.location='/manager_viewStat'"  type="button" class="btnr"></button>
+        <span class="userm"><a style="text-decoration:none ;color:white" href="/manager_inventory">Change price</a></span>
+        <span class="userc"><a style="text-decoration:none ;color:white" href="/manager_viewStat">View sales stastistics</a></span>
+        <!-- <div class="centered">Centered</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager - Search invenotry</title>
+
+    <style>
+        img {
+            opacity: 0.85;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          
+          border: 1px solid grey;
+
+        }
+
+        th, td {
+          text-align: left;
+          padding: 8px;
+          border: 1px solid grey;
+        }
+
+        body {
+            background-image: url("{%static 'inventory.png'%}");
+            background-color: rgb(138, 137, 72);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .scrollingTable {
+            width: 33em;
+            height: 15em;
+            overflow-y: auto;
+            position: absolute;
+            top: 25%;
+            left: 12%;
+            text-align: center;
+        }
+        .heading {
+            position: absolute;
+            text-align: center;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+        }
+
+        .heading2{
+            position: absolute;
+            text-align: center;
+            top: 25%;
+            left: 42.5%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .verticalhorizontal1 {
+            position: absolute;
+            right: 40px;
+            top: 36px;
+            /* border: 2px solid yellow; */
+        }
+
+        .verticalhorizontal1 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 82, 82);
+            color: white;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: rgb(255, 3, 3);
+        }
+
+        .addproduct{
+            position: absolute;
+            text-align: center;
+            top: 83%;
+            left: 39.5%;
+            font-size: 20px;
+            color: rgb(161, 161, 161);
+        }
+
+        .formgroup1{
+            position: absolute;
+            text-align: center;
+            top: 33%;
+            left: 37%;
+            /* border-color: black; */
+        }
+
+        .formgroup2{
+            position: absolute;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            top: 61%;
+            left: 37%;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal button{
+            position: absolute;
+            text-align: center;
+            top: 33%;
+            left: 59%;
+            background-color: rgb(22, 139, 67);
+            cursor: pointer;
+            font-size: 20px;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal button:hover{
+            background-color: rgb(43, 223, 112);
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="verticalhorizontal1">
+        <button onclick="document.location='/logoutUser'" class="btn" style="height:40px; width:120px"> Sign out </button>
+    </div>
+
+    <div class="verticalhorizontal">
+        <img src="{%static 'black.jpg'%}" alt="Forest" width="700" height="700">
+        <h1 class="heading" style="color:white">Shop inventory</h1>
+        <h1 class="heading2" style="color:white">Product ID:</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="formgroup1">
+                <input type="text" name="p_id_in" placeholder="Enter product id" style="height: 40px; width: 300px; font-size: 20px;">
+            </div>
+            <button style="height:47px; width: 49px">Go!</button>
+        </form>
+        <!-- <div class="formgroup2">
+            <label for="product-name">Choose a product:</label>
+            <select name="product-name" id="product-name">
+              <option value="free">Free</option>
+              <option value="bronze">Bronze</option>
+              <option value="silver" selected>Silver</option>
+              <option value="Gold">Gold</option>
+            </select>
+        </div> -->
+        <div class="scrollingTable" style="overflow-x:auto; margin-top: 10%; margin-left: 20%;">
+          <table align="center" style="color: white;">
+            <tr style="background-color: white; color: black;">
+              <th>Product ID</th>
+              <th>Brand</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Cost price</th>
+              <th>Sell price</th>
+            </tr>
+            {% for obj in p_list%}
+                <tr>
+                    <th>{{ obj.p_id }}</th>
+                    <th>{{ obj.brand }}</th>
+                    <th>{{ obj.p_name }}</th>
+                    <th>{{ obj.qty }}</th>
+                    <th>{{ obj.cost_price }}</th>
+                    <th>{{ obj.price }}</th>
+                </tr>
+            {% endfor %}
+            
+            
+          </table>
+        </div>
+
+        <!-- <span class="addproduct">Product not available? <a href="addnewproduct.html" style="color:white">Add Product</a></span> -->
+    </div>
+
+</body>
+
+</html>

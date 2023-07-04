@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Quantity</title>
+
+    <style>
+        img {
+            opacity: 0.85;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background-image: url("{%static 'price.png'%}");   
+            background-color: rgb(72, 98, 138);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .heading {
+            position: absolute;
+            text-align: center;
+            top: 7.5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 55px;
+        }
+
+        .heading2{
+            position: absolute;
+            text-align: center;
+            top: 18%;
+            left: 46%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading3{
+            position: absolute;
+            text-align: center;
+            top: 27%;
+            left: 48.75%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading4{
+            position: absolute;
+            text-align: center;
+            top: 67%;
+            left: 48.25%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading5{
+            position: absolute;
+            text-align: center;
+            top: 77%;
+            left: 44.15%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading6{
+            position: absolute;
+            text-align: center;
+            top: 37%;
+            left: 47.25%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading7{
+            position: absolute;
+            text-align: center;
+            top: 47%;
+            left: 47.75%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading8{
+            position: absolute;
+            text-align: center;
+            top: 57%;
+            left: 46.75%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .verticalhorizontal1 {
+            position: absolute;
+            right: 40px;
+            top: 36px;
+            /* border: 2px solid yellow; */
+        }
+
+        .verticalhorizontal1 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 82, 82);
+            color: white;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: rgb(255, 3, 3);
+        }
+
+        .addproduct{
+            position: absolute;
+            text-align: center;
+            top: 68%;
+            left: 39.5%;
+            font-size: 20px;
+            color: rgb(161, 161, 161);
+        }
+
+        .formgroup1{
+            position: absolute;
+            text-align: center;
+            top: 23%;
+            left: 45%;
+            /* border-color: black; */
+        }
+
+        .formgroup2{
+            position: absolute;
+            text-align: center;
+            top: 33%;
+            left: 45%;
+            /* border-color: black; */
+        }
+
+        .formgroup3{
+            position: absolute;
+            text-align: center;
+            top: 77%;
+            left: 53%;
+            /*top: 63%;
+            left: 45%;*/
+            /* border-color: black; */
+        }
+
+        .formgroup4{
+            position: absolute;
+            text-align: center;
+            top: 73%;
+            left: 45%;
+            /* border-color: black; */
+        }
+
+        .formgroup5{
+            position: absolute;
+            text-align: center;
+            top: 43%;
+            left: 45%;
+            /* border-color: black; */
+        }
+
+        .formgroup6{
+            position: absolute;
+            text-align: center;
+            top: 53%;
+            left: 45%;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal button{
+            position: absolute;
+            text-align: center;
+            top: 84%;
+            left: 53%;
+            background-color: rgb(27, 153, 48);
+            font-size: 20px;
+            cursor: pointer;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal2 button{
+            position: absolute;
+            text-align: center;
+            top: 84%;
+            left: 35%;
+            background-color: rgb(22, 112, 139);
+            font-size: 20px;
+            cursor: pointer;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal2 button:hover{
+            background-color: rgb(39, 152, 204);
+        }
+
+        .verticalhorizontal button:hover{
+            background-color: rgb(42, 211, 70);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="verticalhorizontal1">
+        <button onclick="document.location='/logoutUser'" class="btn" style="height:40px; width:120px"> Sign out </button>
+    </div>
+
+    <div class="verticalhorizontal">
+        <img src="{%static 'black.jpg'%}" alt="Forest" width="700" height="700">
+        <h1 class="heading" style="color:white">Edit Price of Product</h1>
+        <h1 class="heading2" style="color:white"><pre> Product ID   : {{ p_id }}</pre> </h1>
+        <h1 class="heading3" style="color:white"><pre> Product Name : {{ p_name }}</pre> </h1>
+        <h1 class="heading6" style="color:white"><pre> Product type : {{ type }}</pre></h1>
+        <h1 class="heading7" style="color:white"><pre> Brand        : {{ brand }}</pre></h1>
+        <h1 class="heading8" style="color:white"><pre> Quantity     : {{ qty }}   </pre></h1>
+        <h1 class="heading4" style="color:white"><pre> Cost Price   : {{ cost_price }}</pre></h1>
+
+        <h1 class="heading5" style="color:white"><pre> Sell Price   : </pre></h1>
+        <form method="POST" action="">
+            {% csrf_token %}    
+            
+            <div class="formgroup3">
+                <input type="number" name="newPrice" placeholder="{{ price }}" style="height: 40px; width: 175px;">
+            </div>
+            <button style="height:60px; width:200px">Save</button>
+        </form>
+    </div>
+    <div class="verticalhorizontal2">
+        <button onclick="document.location='/manager_inventory'" style="height:60px; width:200px">Discard</button>
+    </div>
+
+</body>
+
+</html>

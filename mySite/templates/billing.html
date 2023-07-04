@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to add & remove table rows</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @media print {
+    #abc,#gen_bill {
+        display:none;
+    }
+}
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      /* .scrollingTable {
+            width: 50em;
+            height: 22em;
+            overflow-y: auto;
+            position: absolute;
+            top: 17%;
+            left: 5%;
+            text-align: center;
+      } */
+      h1 {
+        text-align: center;
+      }
+      .heading {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 55px;
+        }
+      form {
+        width: 500px;
+        margin: 20px auto;
+      }
+      table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 50em;
+          top: 30%;
+          right: 30%;
+          border: 1px solid grey;
+
+      }
+
+      th, td {
+          text-align: left;
+          padding: 8px;
+          border: 1px solid grey;
+      }
+
+      label,
+      input {
+        display: block;
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      button {
+        display: block;
+      }
+
+      .verticalhorizontal1 {
+            position: absolute;
+            left: 43%;
+            top: 48%;
+            /* border: 2px solid yellow; */
+        }
+
+      .verticalhorizontal1 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 82, 82);
+            color: white;
+            font-size: 25px;
+        }
+
+      .btn:hover {
+            background-color: rgb(255, 3, 3);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="verticalhorizontal1" id="gen_bill">
+      <button onclick="document.location='/salesClerk_generateBill'" class="btn" style="height:45px; width:200px"> Generate Bill </button>
+    </div>
+    <h1 style="font-size:40px">Technology Supermarket</h1>
+    <h3 align="center">Bidhan Chandra Sarani, IIT Kgp, Kharagpur-721302</h3>
+    <h1>Customer bill</h1>
+    <form method="POST" action="" id="abc">
+      {% csrf_token %}
+      <div class="input-row">
+        <label for="p_id_in">Product ID</label>
+        <input type="text" name="p_id_in" id="p_id_in" />
+      </div>
+      <div class="input-row">
+        <label for="qty_in">Quantity</label>
+        <input type="number" name="qty_in" id="qty_in" />
+      </div>
+      <button>Add</button>
+    </form>
+    
+<div class="scrollingTable" style="overflow-x:auto; margin-top: 5%; margin-left: 1%;">
+      <table align="center" style="color: black;">
+        <tr style="background-color: white; color: black;">
+          <th>S no.</th>
+          <th>Product ID</th>
+          <th>Brand</th>
+          <th>Product name</th>
+          <th>Unit price</th>
+          <th>Quantity</th>
+          <th>Item price</th>
+          <th>Tax</th>
+          <th>Net cost</th>         
+        </tr>
+
+        {% for obj in p_list%}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <th>{{ obj.prod.p_id }}</th>
+                <th>{{ obj.prod.brand }}</th>
+                <th>{{ obj.prod.p_name }}</th>
+                <th>{{ obj.unit_price }}</th>
+                <th>{{ obj.quantity }}</th>
+                <th>{{ obj.item_price }}</th>
+                <th>{{ obj.tax }}</th>
+                <th>{{ obj.net_cost }}</th>
+            </tr>
+        {% endfor %}
+        
+        
+      </table>
+    </div>
+
+  </body>
+</html>

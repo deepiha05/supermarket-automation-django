@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Vs. profit page</title>
+
+    <style>
+        img {
+            
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            /* background-image: url('Employee_bg.png'); */
+            background-color: rgb(138, 137, 72);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+
+        .heading {
+            position: absolute;
+            text-align: center;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+        }
+
+        .heading2{
+            position: absolute;
+            text-align: center;
+            top: 25%;
+            left: 43%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading3{
+            position: absolute;
+            text-align: center;
+            top: 45%;
+            left: 42.5%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        
+
+        .verticalhorizontal1 {
+            position: absolute;
+            right: 40px;
+            top: 36px;
+            /* border: 2px solid yellow; */
+        }
+
+        .verticalhorizontal2 {
+            position: absolute;
+            left: 40px;
+            top: 36px;
+            /* border: 2px solid yellow; */
+        }
+
+        .verticalhorizontal1 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 82, 82);
+            color: white;
+            font-size: 25px;
+        }
+
+        .verticalhorizontal2 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            top: 3%;
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(255, 82, 82);
+            color: white;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: rgb(255, 3, 3);
+        }
+
+        .addproduct{
+            position: absolute;
+            text-align: center;
+            top: 83%;
+            left: 39.5%;
+            font-size: 20px;
+            color: rgb(161, 161, 161);
+        }
+
+        .formgroup1{
+            position: absolute;
+            text-align: center;
+            top: 33%;
+            left: 38%;
+            /* border-color: black; */
+        }
+
+        .formgroup2{
+            position: absolute;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            top: 53%;
+            left: 38%;
+            /* border-color: black; */
+        }
+
+        .formgroup3{
+            position: absolute;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            top: 65%;
+            left: 38%;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal button{
+            position: absolute;
+            text-align: center;
+            top: 79%;
+            left: 45%;
+            background-color: rgb(22, 139, 67);
+            cursor: pointer;
+            font-size: 20px;
+            /* border-color: black; */
+        }
+
+        .verticalhorizontal button:hover{
+            background-color: rgb(43, 223, 112);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="verticalhorizontal1">
+        <button onclick="document.location='first_page.html'" class="btn" style="height:40px; width:120px"> Sign out </button>
+    </div>
+    <div class="verticalhorizontal2">
+        <button onclick="document.location='sales_statistics.html'" class="btn" style="height:40px; width:120px"> Back </button>
+    </div>
+    <div class="verticalhorizontal">
+        <img src="{%static 'item_profit.png'%}" style="width: 550px; height: 550px;" > 
+        <h1 class="heading" style="color:white">Item Vs. Profit Graph</h1>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <style>
+        img {
+            opacity: 0.85;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background-image: url("{% static 'bg.jpg'%}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .verticalhorizontal {
+
+            color: white;
+        }
+
+
+        .heading {
+            position: absolute;
+            text-align: center;
+            top: 17%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+        }
+
+        .btnl {
+            top: 40%;
+            left: 25%;
+            position: absolute;
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: auto;
+            padding: 100px 90px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            /* background-color: grey; */
+            background-image: url("{%static 'profile.png'%}");
+            background-position-x: center;
+            background-position-y: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: white;
+            display: block;
+        }
+
+        .btnr {
+            top: 40%;
+            left: 63%;
+            position: absolute;
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: auto;
+            padding: 100px 90px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            background-image: url("{%static 'profile.png'%}");
+            background-position-x: center;
+            background-position-y: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: white;
+            display: block;
+        }
+
+        .btnc {
+            top: 40%;
+            left: 44%;
+            position: absolute;
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: auto;
+            padding: 100px 90px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            background-image: url("{%static 'profile.png'%}");
+            background-position-x: center;
+            background-position-y: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            color: white;
+            display: block;
+        }
+
+        .userm{
+            position: absolute;
+            text-align: center;
+            top: 75%;
+            left: 28%;
+            font-size: 25px;
+        }
+
+        .usere{
+            position: absolute;
+            text-align: center;
+            top: 75%;
+            left: 46.5%;
+            font-size: 25px;
+        }
+
+        .userc{
+            position: absolute;
+            text-align: center;
+            top: 75%;
+            left: 65%;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="verticalhorizontal">
+        <img src="{%static 'black.jpg'%}" alt="Forest" width="1000" height="500">
+        <h1 class="heading">User Profile</h1>
+        <button onclick="document.location='/manager_login'" type="button" class="btnl" ></button>
+        <button onclick="document.location='/salesClerk_login'"  type="button" class="btnr"></button>
+        <button onclick="document.location='/employee_login'"  type="button" class="btnc"></button>
+        <span class="userm"><a style="text-decoration:none ;color:white" href="/manager_login">Manager</a></span>
+        <span class="usere"><a style="text-decoration:none ;color:white" href="/employee_login">Employee</a></span>
+        <span class="userc"><a style="text-decoration:none ;color:white" href="/salesClerk_login">Sales clerk</a></span>
+        <!-- <div class="centered">Centered</div> -->
+    </div>
+</body>
+</html>
+

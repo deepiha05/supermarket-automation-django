@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales clerk login </title>
+
+    <style>
+        img {
+            opacity: 0.85;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background-image: url("{%static 'SalesClerk_bg.jpg'%}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .heading {
+            position: absolute;
+            text-align: center;
+            top: 17%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+        }
+
+        .heading2{
+            position: absolute;
+            text-align: center;
+            top: 32%;
+            left: 44%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .heading3{
+            position: absolute;
+            text-align: center;
+            top: 49%;
+            left: 44%;
+            transform: translate(-50%, -50%);
+            /* font-size: 60px; */
+        }
+
+        .formgroup1{
+            position: absolute;
+            text-align: center;
+            top: 39%;
+            left: 39%;
+        }
+
+        .formgroup2{
+            position: absolute;
+            text-align: center;
+            top: 56%;
+            left: 39%;
+        }
+
+        .verticalhorizontal button{
+            position: absolute;
+            text-align: center;
+            top: 66%;
+            left: 39%;
+            background-color: rgb(22, 139, 67);
+            border-color: black;
+        }
+
+        .signup{
+            position: absolute;
+            text-align: center;
+            top: 75%;
+            left: 39.5%;
+            font-size: 20px;
+            color: rgb(116, 116, 116)
+        }
+
+        .verticalhorizontal1 button {
+            /* font-family: 'Baloo Bhai 2', cursive; */
+            margin: 0px 6px;
+            padding: 1px 1px;
+            /* border: 2px solid rgb(0, 0, 0); */
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: rgb(9, 94, 173);
+            color: white;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: rgb(6, 52, 95);
+        }
+
+        .verticalhorizontal1 {
+            position: absolute;
+            right: 40px;
+            top: 36px;
+            /* border: 2px solid yellow; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="verticalhorizontal1">
+        <button onclick="document.location='/'" class="btn" style="height:40px; width:120px"> Home </button>
+    </div>
+    <div class="verticalhorizontal">
+        <img src="{%static 'black.jpg'%}" alt="Forest" width="500" height="600">
+        <h1 class="heading" style="color:white">Sales clerk login</h1>
+        <h1 class="heading2" style="color:white">Username:</h1>
+        <h1 class="heading3" style="color:white">Password:</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="formgroup1">
+                <input type="text" name="username" placeholder="Enter username" style="height: 40px; width: 300px;">
+            </div>
+            <div class="formgroup2">
+                <input type="password" name="password" placeholder="Enter password" style="height: 40px; width: 300px;">
+            </div>
+            <button style="height:30px; width:308px">Login</button>
+        </form>
+        <span class="signup">Don't have an account? <a href="/salesClerk_signup" style="color:white">Sign up now!</a></span>
+    </div>
+</body>
+
+</html>
