@@ -1,4 +1,3 @@
-from pyexpat import model
 from django.db import models
 
 
@@ -29,7 +28,7 @@ class transaction(models.Model):
     
 
 class sold_product(models.Model):
-    ps_id = models.AutoField(primary_key=True, default=0)
+    ps_id = models.AutoField(primary_key=True)
     tran_id = models.IntegerField(default=0)
     # t_date = models.DateTimeField(auto_now_add=True, null=True)
     t_date = models.CharField(max_length=20, default = "2022/04/03")

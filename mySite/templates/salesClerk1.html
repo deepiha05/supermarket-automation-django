@@ -196,6 +196,9 @@
             </div> 
             <button style="height:50px; width: 150px">Start Billing !</button>
         </form>
+        {% for message in messages %}
+            <p id='messages'>{{message}}</p>
+        {% endfor %}
 
     </div>
 </body>

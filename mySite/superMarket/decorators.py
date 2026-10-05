@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 def unauthenticated_manager(view_func):
     def wrapper_func(request, *args, **kwargs):
@@ -29,14 +28,10 @@ def allowed_users(allowed_roles=[]):
     def decorator(view_func):
         def wrapper_func(request, *args, **kwargs):
 
-            # print('Working:', allowed_roles)
-            group = None
-            if request.user.groups.exists():
-                group = request.user.groups.all()[0].name
-
-            if group in allowed_roles:
+            # Superusers, and users in any of the allowed groups, may see the page
+            if request.user.is_superuser or request.user.groups.filter(name__in=allowed_roles).exists():
                 return view_func(request, *args, **kwargs)
             else:
-                return HttpResponse("You are not Authorised to access this page.")
+                return render(request, 'unauthorised_page.html', status=403)
         return wrapper_func
     return decorator

@@ -111,6 +111,9 @@
       </div>
       <button>Add</button>
     </form>
+        {% for message in messages %}
+            <p id='messages'>{{message}}</p>
+        {% endfor %}
     
 <div class="scrollingTable" style="overflow-x:auto; margin-top: 5%; margin-left: 1%;">
       <table align="center" style="color: black;">

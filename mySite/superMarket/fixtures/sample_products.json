@@ -1,0 +1,5 @@
+[
+  {"model": "superMarket.product", "pk": "QWER", "fields": {"brand": "Apple", "p_name": "iPad", "cost_price": "50000.00", "price": "55000.00", "qty": 50, "type": "by_qty"}},
+  {"model": "superMarket.product", "pk": "ASDF", "fields": {"brand": "Samsung", "p_name": "Galaxy S9", "cost_price": "30000.00", "price": "40000.00", "qty": 380, "type": "by_qty"}},
+  {"model": "superMarket.product", "pk": "FGHJ", "fields": {"brand": "Blackberry", "p_name": "Q10", "cost_price": "20000.00", "price": "25000.00", "qty": 30, "type": "by_qty"}}
+]
